@@ -1,0 +1,161 @@
+@use "reset";
+@use "_variables";
+@use "mixins";
+
+main {
+  margin-top: 1.4rem;
+
+  .date {
+    display: inline-block;
+    background-color: variables.$color-light;
+    border-radius: variables.$border-radius-1;
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+
+    input {
+      background-color: transparent;
+      color: variables.$color-dark;
+    }
+  }
+  .insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+
+    // CARDS
+    .sales,
+    .expenses,
+    .income {
+      background-color: variables.$color-white;
+      padding: variables.$card-padding;
+      border-radius: variables.$card-border-radius;
+      margin-top: 1rem;
+      box-shadow: variables.$box-shadow;
+      transition: all 300ms ease;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      span {
+        @include mixins.flexCenter(center,center);
+        background-color: variables.$color-primary;
+        color: variables.$color-white;
+        padding: 1.2rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+      }
+    }
+    .expenses span {
+      background-color: variables.$color-danger;
+    }
+    .income span {
+      background-color: variables.$color-sucess;
+    }
+
+    .middle {
+      @include mixins.flexCenter(center,center);
+      
+      h3 {
+        margin: 1rem 0 0.6rem;
+        font-size: 1rem;
+      }
+      .progress {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+
+        svg {
+          width: 7rem;
+          height: 7rem;
+
+          circle {
+            fill: none;
+            stroke: variables.$color-primary;
+            stroke-width: 14;
+            stroke-linecap: round;
+            transform: translate(5px, 5px);
+            stroke-dasharray: 110;
+            stroke-dashoffset: 92;
+          }
+        }
+      }
+    }
+
+    .sales .middle svg circle {
+      stroke-dashoffset: -30;
+      stroke-dasharray: 200;
+    }
+    .expenses .middle svg circle {
+      stroke-dashoffset: 10;
+      stroke-dasharray: 80;
+    }
+    .income .middle svg circle {
+      stroke-dashoffset: 35;
+      stroke-dasharray: 110;
+    }
+  }
+
+  .progress .number {
+    @include mixins.flexCenter(center,center);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .text-muted {
+    margin-top: 1.3rem;
+    display: block;
+  }
+  // Recent Order
+  .recent-orders {
+    margin-top: 2rem;
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+    table {
+      background-color: variables.$color-white;
+      width: 100%;
+      border-radius: variables.$card-border-radius;
+      padding: variables.$card-padding;
+      text-align: center;
+      box-shadow: variables.$box-shadow;
+      transition: all 300ms ease;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      tbody {
+        td {
+          height: 2.8rem;
+          border-bottom: 1px solid variables.$color-light;
+        }
+
+        tr:last-child td {
+          border: none;
+        }
+
+        .primary:hover {
+          cursor: pointer;
+          color: variables.$color-dark;
+        }
+      }
+    }
+
+    a {
+      text-align: center;
+      display: block;
+      margin: 1rem auto;
+      color: variables.$color-primary;
+
+      &:hover {
+        cursor: pointer;
+        color: variables.$color-dark;
+      }
+    }
+  }
+}
