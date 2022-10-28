@@ -576,15 +576,15 @@ main .recent-orders table tbody tr td:last-child {
     font-size: 2rem;
   }
   .info-right .top .theme-toggler {
-    width: 4.4rem;
+    width: 4.5rem;
     position: absolute;
-    left: 62%;
+    right: 20%;
   }
   .info-right .top .profile .info {
     display: none;
   }
 }
-/* animation */
+/* animation sidebar*/
 @keyframes showMenu {
   to {
     left: 0;

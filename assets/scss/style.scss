@@ -326,7 +326,7 @@ aside {
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr ;
   }
 
   aside {
@@ -421,9 +421,9 @@ aside {
       }
 
       .theme-toggler {
-        width: 4.4rem;
+        width: 4.5rem;
         position: absolute;
-        left: 62%;
+        right: 20%;
       }
 
       .profile {
@@ -437,13 +437,12 @@ aside {
   }
 }
 
-/* animation */
+/* animation sidebar*/
 
 @keyframes showMenu {
   to{
     left: 0;
   }
 }
-
 
 
