@@ -1,17 +1,17 @@
-@use "reset";
-@use "_variables";
-@use "mixins";
-@use "main";
+@import "reset";
+@import "_variables";
+@import "mixins";
+@import "main";
 
 
 body {
-  background-color: variables.$color-background;
+  background-color:var(--color-background);
   width: 100vw;
   height: 100vh;
   font: 14px 'Poppins', 'sans-serif';
   user-select: none;
   overflow-x: hidden;
-  color: variables.$color-dark;
+  color:var(--color-dark);
 }
 
 .container {
@@ -26,7 +26,7 @@ aside {
   height: 100vh;
 
   .top {
-    @include mixins.flexCenter(center, space-between);
+    @include flexCenter(center, space-between);
     margin-top: 1.4rem;
 
     .logo {
@@ -59,7 +59,7 @@ aside {
   }
 
   a {
-    @include mixins.flexCenter(center, none);
+    @include flexCenter(center, none);
 
     margin-left: 2rem;
     gap: 1rem;
@@ -68,7 +68,7 @@ aside {
     transition: all 300ms ease;
 
     &:hover {
-      color: variables.$color-primary;
+      color:var(--color-primary);
       margin-left: 1rem;
     }
 
@@ -85,29 +85,29 @@ aside {
   }
 
   .active {
-    background-color: variables.$color-light;
-    color: variables.$color-primary;
+    background-color: var(--color-light);
+    color:var(--color-primary);
     margin-left: 0;
 
     &:before {
       content: "";
       width: 6px;
       height: 100%;
-      background-color: variables.$color-primary;
+      background-color: var(--color-primary);
     }
 
     span {
-      color: variables.$color-primary;
+      color: var(--color-primary);
       margin-left: calc(1rem - 3px);
     }
   }
 
   .message-count {
-    background-color: variables.$color-danger;
-    color: variables.$color-white;
+    background-color: var(--color-danger);
+    color: var(--color-white);
     padding: 2px 10px;
     font-size: 12px;
-    border-radius: variables.$border-radius-1;
+    border-radius: var(--border-radius-1);
   }
 }
 
@@ -129,29 +129,29 @@ aside {
   }
 
   .theme-toggler {
-    background-color: variables.$color-light;
-    @include mixins.flexCenter(center, space-between);
+    background-color: var(--color-light);
+    @include flexCenter(center, space-between);
     height: 1.6rem;
     width: 4.2rem;
     cursor: pointer;
-    border-radius: variables.$border-radius-1;
+    border-radius:var(--border-radius-1);
 
     span {
       font-size: 1.2rem;
       width: 50%;
       height: 100%;
-      @include mixins.flexCenter(center, center);
+      @include flexCenter(center, center);
     }
 
     span.active {
-      background-color: variables.$color-primary;
+      background-color: var(--color-primary);
       color: #fff;
-      border-radius: variables.$border-radius-1;
+      border-radius: var(--border-radius-1);
     }
   }
 
   .profile {
-    @include mixins.flexCenter(center, center);
+    @include flexCenter(center, center);
     text-align: right;
     gap: 2rem;
   }
@@ -165,10 +165,10 @@ aside {
     }
 
     .updates {
-      background-color: variables.$color-white;
-      padding: variables.$card-padding;
-      border-radius: variables.$card-border-radius;
-      box-shadow: variables.$box-shadow;
+      background-color: var(--color-white);
+      padding: var(--card-padding);
+      border-radius: var(--card-border-radius);
+      box-shadow: var(--box-shadow);
       transition: all 300ms ease;
 
       &:hover {
@@ -200,9 +200,9 @@ aside {
       align-items: center;
       gap: 1rem;
       margin-bottom: 0.7rem;
-      padding: 1.4rem variables.$card-padding;
-      border-radius: variables.$border-radius-3;
-      box-shadow: variables.$box-shadow;
+      padding: 1.4rem var(--card-padding);
+      border-radius: var(--border-radius-3);
+      box-shadow: var(--box-shadow);
       transition: all 300ms ease;
 
       &:hover {
@@ -211,26 +211,26 @@ aside {
 
       .icon {
         padding: 0.6rem;
-        color: variables.$color-white;
+        color: var(--color-white);
         border-radius: 50%;
         display: flex;
       }
 
       .cart {
-        background-color: variables.$color-primary;
+        background-color: var(--color-primary);
       }
 
       .mall {
-        background-color: variables.$color-danger;
+        background-color: var(--color-danger);
       }
 
       .person {
-        background-color: variables.$color-sucess;
+        background-color: var(--color-sucess);
       }
 
 
       .right {
-        @include mixins.flexCenter(start, space-between);
+        @include flexCenter(start, space-between);
         margin: 0;
         width: 100%;
       }
@@ -238,13 +238,13 @@ aside {
 
     .add-product {
       background-color: transparent;
-      border: 2px dashed variables.$color-primary;
-      @include mixins.flexCenter(center, center);
+      border: 2px dashed var(--color-primary);
+      @include flexCenter(center, center);
 
       div {
-        @include mixins.flexCenter(center, none);
+        @include flexCenter(center, none);
         gap: 0.6rem;
-        color: variables.$color-primary;
+        color: var(--color-primary);
 
         h3 {
           font-weight: 600;
@@ -263,7 +263,7 @@ aside {
 @media screen and (max-width:1200px) {
   aside {
     .container {
-  
+
       width: 94%;
       grid-template-columns: 7rem auto 23rem;
 
@@ -326,18 +326,18 @@ aside {
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
   }
 
   aside {
     position: fixed;
     left: -100%;
-    background: variables.$color-white;
+    background: var(--color-white);
     width: 18rem;
     height: 100vh;
     z-index: 3;
-    box-shadow: 1rem 3rem 4rem variables.$color-light;
-    padding-right: variables.$card-padding;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    padding-right: var(--card-padding);
     display: none;
     // animation
     animation: showMenu 500ms ease forwards;
@@ -393,7 +393,7 @@ aside {
   .info-right {
     width: 94%;
     margin: 0 auto 4rem;
-    
+
     .top {
       position: fixed;
       top: 0;
@@ -402,16 +402,17 @@ aside {
       padding: 0 0.8rem;
       height: 4.6rem;
       width: 100%;
-      background: variables.$color-white;
+      background: var(--color-white);
       margin: 0;
       z-index: 2;
-      box-shadow: 0 1rem 1rem variables.$color-light ;
+      box-shadow: 0 1rem 1rem var(--color-light) ;
+
       /* menu btn */
       button {
         display: inline-block;
         background-color: transparent;
         cursor: pointer;
-        color: variables.$color-dark;
+        color: var(--color-dark);
         position: absolute;
         left: 1rem;
 
@@ -440,9 +441,7 @@ aside {
 /* animation sidebar*/
 
 @keyframes showMenu {
-  to{
+  to {
     left: 0;
   }
 }
-
-

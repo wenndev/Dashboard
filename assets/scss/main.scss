@@ -1,20 +1,20 @@
-@use "reset";
-@use "_variables";
-@use "mixins";
+@import "_reset";
+@import "_variables";
+@import "mixins";
 
 main {
   margin-top: 1.4rem;
 
   .date {
     display: inline-block;
-    background-color: variables.$color-light;
-    border-radius: variables.$border-radius-1;
+    background-color:var(--color-light);
+    border-radius: var(--border-radius-1);
     margin-top: 1rem;
     padding: 0.5rem 1.6rem;
 
     input {
       background-color: transparent;
-      color: variables.$color-dark;
+      color: var(--color-dark);
     }
   }
   .insights {
@@ -26,11 +26,11 @@ main {
     .sales,
     .expenses,
     .income {
-      background-color: variables.$color-white;
-      padding: variables.$card-padding;
-      border-radius: variables.$card-border-radius;
+      background-color: var(--color-white);
+      padding: var(--card-padding);
+      border-radius: var(--card-border-radius);
       margin-top: 1rem;
-      box-shadow: variables.$box-shadow;
+      box-shadow: var(--box-shadow);
       transition: all 300ms ease;
 
       &:hover {
@@ -38,23 +38,23 @@ main {
       }
 
       span {
-        @include mixins.flexCenter(center,center);
-        background-color: variables.$color-primary;
-        color: variables.$color-white;
+        @include flexCenter(center,center);
+        background-color: var(--color-primary);
+        color: var(--color-white);
         padding: 1.2rem;
         border-radius: 50%;
         font-size: 1.5rem;
       }
     }
     .expenses span {
-      background-color: variables.$color-danger;
+      background-color: var(--color-danger);
     }
     .income span {
-      background-color: variables.$color-sucess;
+      background-color:var(--color-sucess);
     }
 
     .middle {
-      @include mixins.flexCenter(center,center);
+      @include flexCenter(center,center);
       
       h3 {
         margin: 1rem 0 0.6rem;
@@ -72,7 +72,7 @@ main {
 
           circle {
             fill: none;
-            stroke: variables.$color-primary;
+            stroke: var(--color-primary);
             stroke-width: 14;
             stroke-linecap: round;
             transform: translate(5px, 5px);
@@ -98,7 +98,7 @@ main {
   }
 
   .progress .number {
-    @include mixins.flexCenter(center,center);
+    @include flexCenter(center,center);
     position: absolute;
     top: 0;
     left: 0;
@@ -117,12 +117,12 @@ main {
       margin-bottom: 0.8rem;
     }
     table {
-      background-color: variables.$color-white;
+      background-color: var(--color-white);
       width: 100%;
-      border-radius: variables.$card-border-radius;
-      padding: variables.$card-padding;
+      border-radius: var(--card-border-radius);
+      padding: var(--card-padding);
       text-align: center;
-      box-shadow: variables.$box-shadow;
+      box-shadow: var(--box-shadow);
       transition: all 300ms ease;
 
       &:hover {
@@ -132,7 +132,7 @@ main {
       tbody {
         td {
           height: 2.8rem;
-          border-bottom: 1px solid variables.$color-light;
+          border-bottom: 1px solid var(--color-light);
         }
 
         tr:last-child td {
@@ -141,7 +141,7 @@ main {
 
         .primary:hover {
           cursor: pointer;
-          color: variables.$color-dark;
+          color: var(--color-dark);
         }
       }
     }
@@ -150,11 +150,11 @@ main {
       text-align: center;
       display: block;
       margin: 1rem auto;
-      color: variables.$color-primary;
+      color: var(--color-primary);
 
       &:hover {
         cursor: pointer;
-        color: variables.$color-dark;
+        color: var(--color-dark);
       }
     }
   }
