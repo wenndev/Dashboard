@@ -26,7 +26,7 @@ const Orders = [
     {
         productName: 'Gps 4K Drone',
         productNumber: '22821',
-        paymentStatus:'paid',
+        paymentStatus:'Paid',
         shipping:'Delivered'
     },
     {
